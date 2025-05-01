@@ -12,7 +12,6 @@ services:
     tty: true
     depends_on:
       - db
-      - redis
       - jaeger
     volumes:
       # shared volume between worker and api for media
@@ -55,7 +54,6 @@ services:
       - common.env
       - backend.env
     depends_on:
-      - redis
       - mailpit
     volumes:
       # shared volume between worker and api for media
